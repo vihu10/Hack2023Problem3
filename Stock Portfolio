@@ -1,0 +1,145 @@
+import os, time, random, sys
+
+
+#Variables
+#Company Names
+company1 = "Apple Inc (AAPL)"
+company2 = "Microsoft Corporation (MSFT)"
+company3 = "Amazon.com Inc. (AMZN)"
+company4 = "Alphabet Inc. Class A (GOOGL)"
+company5 = "Berkshire Hathaway Inc. Class B (BRK.B)"
+#Company Prices
+company1price = 150.08
+company2price = 262.26
+company3price = 112.54
+company4price = 106.86
+company5price = 311.69
+#Amont of Stocks
+AAPL = 0
+MSFT = 0
+AMZN = 0
+GOOGL = 0
+BRKB = 0
+#Money
+Money = 100000
+#Money/Portfolio
+
+
+def home():
+  print ("STOCK PORTFOLIO\n\n")
+  print ("Current Money: $" + str(Money))
+  print ("AAPL Stocks: " + str(AAPL))
+  print ("MSFT Stocks: " + str(MSFT))
+  print ("AMZN Stocks: " + str(AMZN))
+  print ("GOGGl Stocks: " + str(GOOGL))
+  print ("BRK.B Stocks: " + str(BRKB))
+  
+    
+def companies():
+  
+  print ("COMPANIES:\n")
+  print (company1 + " Stock Price: $" + str(company1price))
+  print (company2 + " Stock Price: $" + str(company2price))
+  print (company3 + " Stock Price: $" + str(company3price))
+  print (company4 + " Stock Price: $" + str(company4price))
+  print (company5 + " Stock Price: $" + str(company5price))
+
+while Money > 0:
+  home()
+  
+  UserChoice = input("\n\nWould you like to buy or sell? (buy/sell)")
+  UserChoice.lower()
+  
+  
+  if UserChoice == "buy":
+    os.system('clear')
+    companies()
+    invest = input("\n\nWhich company would you like to invest in? (Please enter abbriviation!)")
+    invest.upper()
+    if invest == "AAPL":
+      MoneySpent = input ("How many shares would you like to buy?\n")
+      invest.upper()
+      NMS = float(MoneySpent)
+      spent = NMS * 150.08
+      Money2 = float(Money) - spent
+      Money = Money2
+      a = AAPL + NMS
+      AAPL = a
+    elif invest == "MSFT":
+      MoneySpent = input ("How many shares would you like to buy?\n")
+      NMS = float(MoneySpent)
+      spent = NMS * 262.26
+      Money2 = float(Money) - spent
+      Money = Money2
+      a = MSFT + NMS
+      MSFT = a
+    elif invest == "AMZN":
+      MoneySpent = input ("How many shares would you like to buy?\n")
+      NMS = float(MoneySpent)
+      spent = NMS * 112.54
+      Money2 = float(Money) - spent
+      Money = Money2
+      a = AMZN + NMS
+      AMZN = a
+    elif invest == "GOOGL":
+      MoneySpent = input ("How many shares would you like to buy?\n")
+      NMS = float(MoneySpent)
+      spent = NMS * 106.86
+      Money2 = float(Money) - spent
+      Money = Money2
+      a = GOOGL + NMS
+      GOOGL = a
+    else:
+      MoneySpent = input ("How many shares would you like to buy?\n")
+      NMS = float(MoneySpent)
+      spent = NMS * 311.69
+      Money2 = float(Money) - spent
+      Money = Money2
+      a = BRKB + NMS
+      BRKB = a
+  else:   
+    os.system('clear')
+    sold = input("Which shares would you like to sell?\n\n")
+    if sold == "AAPL":
+      SoldStocks = input ("How many shares would you like to sell?\n")
+      NMG = float(SoldStocks)
+      soldMoney = NMG * 150.08
+      Money2 = float(Money) + soldMoney
+      Money = Money2
+      b = AAPL - NMG
+      AAPL = b
+    elif sold == "MSFT":
+      SoldStocks = input ("How many shares would you like to sell?\n")
+      NMG = float(SoldStocks)
+      soldMoney = NMG * 262.26
+      Money2 = float(Money) + soldMoney
+      Money = Money2
+      b = MSFT - NMG
+      MSFT = b
+    elif sold == "AMZN":
+      SoldStocks = input ("How many shares would you like to sell?\n")
+      NMG = float(SoldStocks)
+      soldMoney = NMG * 112.54
+      Money2 = float(Money) + soldMoney
+      Money = Money2
+      b = AMZN - NMG
+      AMZN = b
+    elif sold == "GOOGL":
+      SoldStocks = input ("How many shares would you like to sell?\n")
+      NMG = float(SoldStocks)
+      soldMoney = NMG * 106.86
+      Money2 = float(Money) + soldMoney
+      Money = Money2
+      b = GOOGL - NMG
+      GOOGL = b
+    else:
+      SoldStocks = input ("How many shares would you like to sell?\n")
+      NMG = float(SoldStocks)
+      soldMoney = NMG * 311.69
+      Money2 = float(Money) + soldMoney  
+      Money = Money2
+      b = BRKB - NMG
+      BRKB = b
+  
+  os.system('clear')
+  
